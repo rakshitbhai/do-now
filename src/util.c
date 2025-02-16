@@ -30,6 +30,7 @@ char month[5];
 char year[6];
 char work[6] = "/work";
 char infoFile[9] = "/info.md";
+char gitIgnoreFile[] = "/.gitignore";
 char *baseDir = NULL;
 char isDefault = 1;
 int countG = 0;
@@ -176,6 +177,57 @@ void free_list(char *list[], int count)
         free(list[i]);
     }
 }
+void create_gitignore(const char *filename)
+{
+    FILE *file = fopen(filename, "w");
+
+    if (file == NULL)
+    {
+        printf("Error: Unable to create .gitignore file.\n");
+        return;
+    }
+
+    // Write common ignore patterns
+    const char *patterns[] = {
+        "# Ignore macOS system files",
+        ".DS_Store",
+        " *.DS_Store",
+        " *.DS_Store.*",
+        "",
+        "# Ignore build artifacts",
+        "*.o",
+        "*.exe",
+        "*.out",
+        "bin/",
+        "obj/",
+        "",
+        "# Ignore Node.js dependencies",
+        "node_modules/",
+        "",
+        "# Ignore Python cache files",
+        "__pycache__/",
+        "*.pyc",
+        "*.pyo",
+        "",
+        "# Ignore log files",
+        "*.log",
+        "",
+        "# Ignore IDE settings",
+        ".vscode/",
+        ".idea/",
+        "*.swp",
+        NULL // Marks the end of the array
+    };
+
+    for (int i = 0; patterns[i] != NULL; i++)
+    {
+        fprintf(file, "%s\n", patterns[i]);
+    }
+
+    fclose(file);
+    printf(".gitignore file created successfully.\n");
+}
+
 void createMarkdownFile(const char *filename)
 {
     FILE *file = fopen(filename, "w");
@@ -241,8 +293,12 @@ void generate()
         strcpy(base, baseDir);
         strcat(base, rootDir);
 
-        // success(base);
+        success(base);
         create_directory(base);
+        char base1[1024];
+        strcpy(base1, base);
+        strcat(base1, gitIgnoreFile);
+        create_gitignore(base1);
 
         strcat(base, year);
         // success(base);
@@ -257,11 +313,11 @@ void generate()
         // success(base);
         create_directory(base);
 
-        char base1[1024];
-        strcpy(base1, base);
-        // success(base1);
-        strcat(base1, infoFile);
-        createMarkdownFile(base1);
+        char base2[1024];
+        strcpy(base2, base);
+        // success(base2);
+        strcat(base2, infoFile);
+        createMarkdownFile(base2);
 
         strcat(base, work);
         // success(base);
