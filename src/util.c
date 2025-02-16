@@ -30,7 +30,7 @@ char month[5];
 char year[6];
 char work[6] = "/work";
 char infoFile[9] = "/info.md";
-char gitIgnoreFile[] = "/.gitignore";
+char gitIgnoreFile[12] = "/.gitignore";
 char *baseDir = NULL;
 char isDefault = 1;
 int countG = 0;
