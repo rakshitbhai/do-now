@@ -46,11 +46,13 @@ When you run the program, it will prompt you to choose whether to continue with 
 
 - **To use the default list**, type `n`.
   
-  ![Default List Prompt](<Screenshot 2025-02-16 at 1.04.30 PM.png>)
+![Screenshot 2025-02-16 at 1 04 30 PM](https://github.com/user-attachments/assets/3bda30af-8cdf-4e38-96c6-a54daa45fd86)
+
   
   Upon pressing `n`, the following screen will appear:
   
-  ![Default List Screen](<Screenshot 2025-02-16 at 1.05.03 PM.png>)
+![Screenshot 2025-02-16 at 1 05 03 PM](https://github.com/user-attachments/assets/2af33340-507c-427f-a24a-18518280c32f)
+
   
   The default list is located in `src/changehere.c`. You can modify it as needed.
 
@@ -58,7 +60,8 @@ When you run the program, it will prompt you to choose whether to continue with 
   
   Here, you can add your tasks one by one:
   
-  ![Task Addition Screen](<Screenshot 2025-02-16 at 5.38.58 PM.png>)
+![Screenshot 2025-02-16 at 5 38 58 PM](https://github.com/user-attachments/assets/607b6c37-3f39-4494-8c7e-a7d128cd246e)
+
   
 ### Task Storage
 Once tasks are entered, the program will generate a task list stored in an `info.md` file located at:
