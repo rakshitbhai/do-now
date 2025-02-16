@@ -81,11 +81,12 @@ The generated folder structure will look like this:
 
 ```
 ├── TIME LINE
-│   └── (Year)
-│       └── (Month)
-│           └── (Day)
-│               ├── info.md   <-- Markdown file
-│               └── work      <-- Work folder
+│   ├── 2025
+│   │   └── Feb
+│   │       └── 17(Mon)
+│   │           ├── info.md <-- Contains Task List 
+│   │           └── work    <-- Folder to do your task 
+│   └── .gitignore          <-- For ignoring some system-generated files
 ```
 
 ## Version Control
