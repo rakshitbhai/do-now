@@ -97,14 +97,14 @@ void create_directory(const char *path)
 #else
     if (mkdir(path, 0777) == 0)
     {
-        success("Directory Created"); // 0777 sets full access permissions
-                                      // Success
+        // success("Directory Created"); // 0777 sets full access permissions
+        // Success
     }
     else
     {
         if (errno != EEXIST)
         {
-            perror("");
+            perror("ERR");
             // Directory already exists; we ignore this error.
         }
     }
