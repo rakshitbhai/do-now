@@ -225,7 +225,6 @@ void create_gitignore(const char *filename)
     }
 
     fclose(file);
-    printf(".gitignore file created successfully.\n");
 }
 
 void createMarkdownFile(const char *filename)
@@ -293,7 +292,7 @@ void generate()
         strcpy(base, baseDir);
         strcat(base, rootDir);
 
-        success(base);
+        // success(base);
         create_directory(base);
         char base1[1024];
         strcpy(base1, base);
