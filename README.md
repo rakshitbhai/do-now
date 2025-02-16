@@ -55,7 +55,7 @@ When you run the program, it will prompt you to choose whether to continue with 
 
   
   The default list is located in `src/changehere.c`. You can modify it as needed.
-
+---
 - **To create a new list**, type `y`.
   
   Here, you can add your tasks one by one:
